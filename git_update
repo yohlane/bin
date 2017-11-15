@@ -1,0 +1,7 @@
+#!/bin/bash
+folders=("$( ls -aR ~/ | grep -i ".*:" | grep -i ".git:" | sed s'/.git://' )");
+
+while read -r line; do
+  echo -e "-------\n$line\n-------"
+  cd $line; git pull
+done <<< "$folders"

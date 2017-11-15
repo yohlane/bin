@@ -1,0 +1,1 @@
+grep -Pzo "(\d+\.)\n(.*)\n(.*)\n" crtl.a | tr '\n' '-'| sed -E 's/([[:digit:]]+).-/\n\1-/g'| sed -e 's/..$//g'| tr '•' '-' | sed -e 's/---/-/g'|tail -n +2 
